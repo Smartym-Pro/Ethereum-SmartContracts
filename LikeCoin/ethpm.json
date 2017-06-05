@@ -1,0 +1,13 @@
+{
+  "authors": [
+    "Kirill Beresnev <kirill.b@smartum.pro>"
+  ],
+  "license": "MIT",
+  "description": "Ethereum LikeCoin Contract",
+  "dependencies": {
+    "tokens": "0.0.2"
+  },
+  "manifest_version": 1,
+  "package_name": "likecoin",
+  "version": "0.0.1"
+}

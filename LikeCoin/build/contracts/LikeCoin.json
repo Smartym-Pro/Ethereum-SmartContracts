@@ -1,0 +1,452 @@
+{
+  "contract_name": "LikeCoin",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_contentId",
+          "type": "uint256"
+        },
+        {
+          "name": "_coinsReceiver",
+          "type": "address"
+        }
+      ],
+      "name": "share",
+      "outputs": [
+        {
+          "name": "result",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ethToCoinCourse",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_ethReceiver",
+          "type": "address"
+        },
+        {
+          "name": "_coinsValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendEtherForCoins",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_contentId",
+          "type": "uint256"
+        },
+        {
+          "name": "_coinsReceiver",
+          "type": "address"
+        }
+      ],
+      "name": "like",
+      "outputs": [
+        {
+          "name": "result",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "contentIds",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "shareMultiplier",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "likeMultiplier",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "remaining",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "coinsMaster",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_contentId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "_whoLiked",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "Like",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_contentId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "_whoLiked",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "Share",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000c57fe5b5b620186a0600081815560038054600160a060020a03328116600160a060020a03199092169190911780835516825260016020818152604084209490945560049093527fabd6e7cb50984ff9c2f3e18a2660c3353dadf4e3291deeb275dae2cd1e44fe05805460ff1990811685179091557f91da3fd0782e51c6b3986e9e672fd566868e71f3dbc2d6c2cd6fbb3e361af2a78054821690941790935590527f2e174c10e159ea99b867ce3205125c24a42d128804e4070ed6fcc8cc98166aa0805490911660021790555b5b610781806100e66000396000f300606060405236156100b45763ffffffff60e060020a600035041663095ea7b381146100b6578063154e6636146100e957806318160ddd1461011c57806323b872dd1461013e578063446949411461017757806370a082311461019957806374005c7c146101c7578063a9059cbb146101e8578063b20be2f61461021b578063b7d17b3c1461024e578063b7d6354214610277578063d66ccfd31461029d578063dd62ed3e146102c3578063e00e4a42146102f7575bfe5b34156100be57fe5b6100d5600160a060020a0360043516602435610323565b604080519115158252519081900360200190f35b34156100f157fe5b6100d5600435600160a060020a036024351661038e565b604080519115158252519081900360200190f35b341561012457fe5b61012c610409565b60408051918252519081900360200190f35b341561014657fe5b6100d5600160a060020a036004358116906024351660443561040f565b604080519115158252519081900360200190f35b341561017f57fe5b61012c6104f3565b60408051918252519081900360200190f35b34156101a157fe5b61012c600160a060020a03600435166104f8565b60408051918252519081900360200190f35b34156101cf57fe5b6101e6600160a060020a0360043516602435610517565b005b34156101f057fe5b6100d5600160a060020a036004351660243561055b565b604080519115158252519081900360200190f35b341561022357fe5b6100d5600435600160a060020a03602435166105f5565b604080519115158252519081900360200190f35b341561025657fe5b610261600435610670565b6040805160ff9092168252519081900360200190f35b341561027f57fe5b610261610685565b6040805160ff9092168252519081900360200190f35b34156102a557fe5b61026161068a565b6040805160ff9092168252519081900360200190f35b34156102cb57fe5b61012c600160a060020a036004358116906024351661068f565b60408051918252519081900360200190f35b34156102ff57fe5b6103076106bc565b60408051600160a060020a039092168252519081900360200190f35b600160a060020a03338116600081815260026020908152604080832094871680845294825280832086905580518681529051929493927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35060015b92915050565b6000600061039d6002856106cb565b905082600160a060020a03167f35dd9a168f6a0f840efd8d5ee995aa0aa658540f2ba30eb34b39847b84490fb58583604051808381526020018281526020019250505060405180910390a26003546103ff90600160a060020a0316848361040f565b91505b5092915050565b60005481565b600160a060020a03831660009081526001602052604081205482901080159061045f5750600160a060020a0380851660009081526002602090815260408083203390941683529290522054829010155b801561046b5750600082115b156104e757600160a060020a03808416600081815260016020908152604080832080548801905588851680845281842080548990039055600283528184203390961684529482529182902080548790039055815186815291519293926000805160206107368339815191529281900390910190a35060016104eb565b5060005b5b9392505050565b600a81565b600160a060020a0381166000908152600160205260409020545b919050565b61052182826106e4565b81600160a060020a03166108fc6105378361070e565b6040518115909202916000818181858888f19350505050151561055657fe5b5b5050565b600160a060020a0333166000908152600160205260408120548290108015906105845750600082115b156105e657600160a060020a0333811660008181526001602090815260408083208054889003905593871680835291849020805487019055835186815293519193600080516020610736833981519152929081900390910190a3506001610388565b506000610388565b5b92915050565b600060006106046001856106cb565b905082600160a060020a03167f51aa394f1f2f954e1f13687424cb0f2785f49480997b2629b401d6376bc6c04b8583604051808381526020018281526020019250505060405180910390a26003546103ff90600160a060020a0316848361040f565b91505b5092915050565b60046020526000908152604090205460ff1681565b600281565b600181565b600160a060020a038083166000908152600260209081526040808320938516835292905220545b92915050565b600354600160a060020a031681565b60006106d68261071d565b830260ff1690505b92915050565b600080548290038155600160a060020a0383168152600160205260409020805482900390555b5050565b6000600a825b0490505b919050565b60008181526004602052604090205460ff165b9190505600ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3efa165627a7a72305820c1a6d96519897a5f696d6f714379c9727273a0775b502ec7a642c3979720b9720029",
+  "networks": {
+    "1496368599072": {
+      "events": {
+        "0x51aa394f1f2f954e1f13687424cb0f2785f49480997b2629b401d6376bc6c04b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_contentId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "name": "_whoLiked",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_reward",
+              "type": "uint256"
+            }
+          ],
+          "name": "Like",
+          "type": "event"
+        },
+        "0x35dd9a168f6a0f840efd8d5ee995aa0aa658540f2ba30eb34b39847b84490fb5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_contentId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "name": "_whoLiked",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_reward",
+              "type": "uint256"
+            }
+          ],
+          "name": "Share",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x58f1d3c725011534ea2f9535b124e9d9d2a44241",
+      "updated_at": 1496369350792
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1496370463941
+}
